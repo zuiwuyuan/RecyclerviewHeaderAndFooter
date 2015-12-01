@@ -10,35 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-//    private List<String> lists;
-//    private RecyclerView mRecyclerView;
-//    RecyclerViewAdapter mAdapter;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        initDatas();
-//        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//        mAdapter = new RecyclerViewAdapter(lists) ;
-//        mRecyclerView.setAdapter(mAdapter);
-//    }
-//    private void initDatas() {
-//        lists = new ArrayList<>();
-//        for (int i = 0; i < 10; i++) {
-//            lists.add(i + "");
-//        }
-//    }
-//
-//    public void add(View view) {
-//        lists.add("吴亚明");
-//        mAdapter.notifyDataSetChanged();
-//    }
 
     private RecyclerView mRecyclerView;
-    private RecyclerViewAdapter mAdapter;
+    private MyAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     private List<DataBean> myDataset = new ArrayList<DataBean>();
@@ -47,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         // improve performance if you know that changes in content
@@ -66,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         myDataset.add(new DataBean("无缘公子5"));
         myDataset.add(new DataBean("无缘公子6"));
 
-        mAdapter = new RecyclerViewAdapter(myDataset);
+        mAdapter = new MyAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
     }
 

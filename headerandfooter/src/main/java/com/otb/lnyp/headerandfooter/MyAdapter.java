@@ -9,13 +9,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.RecyclerViewHolder> {
     private List<DataBean> datas;
     private static final int IS_HEADER = 2;
     private static final int IS_FOOTER = 3;
     private static final int IS_NORMAL = 1;
 
-    public RecyclerViewAdapter(List<DataBean> datas) {
+    public MyAdapter(List<DataBean> datas) {
         this.datas = datas;
     }
 
@@ -32,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder = new RecyclerViewHolder(view, IS_FOOTER, null);
             return holder;
         } else if (viewType == IS_NORMAL) {
-            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.my_text_view, viewGroup, false);
+            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item_data, viewGroup, false);
             holder = new RecyclerViewHolder(view, IS_NORMAL, new IMyViewHolderClicks() {
                 @Override
                 public void onUp(DataBean user, int position) {
