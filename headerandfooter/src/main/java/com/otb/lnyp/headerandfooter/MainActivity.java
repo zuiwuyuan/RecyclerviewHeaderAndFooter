@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void add(View view) {
-        myDataset.add(new DataBean(""));
+        myDataset.add(new DataBean("江湖豪侠"));
         mAdapter.notifyDataSetChanged();
     }
 }
